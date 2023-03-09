@@ -7,30 +7,31 @@
 body {
   font-family: 'Muli', sans-serif;
   display: flex;
-  align-items: center;
+  align-items: start; /* haut/bas =  start/end */
   justify-content: center;
   height: 100vh;
-  overflow: hidden;
+  overflow: hhidden;
   margin: 0;
 }
 
 .container {
   display: flex;
-  width: 90vw;
+  /* flex-direction: column; if want them in row */
+  width: 90vw; /* take 90% of the horizontal size page */
 }
 
 .panel {
-  background-size: cover;
+  background-size: auto; /* image fitscontainer100 auto*/
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh;
-  border-radius: 50px;
+  border-radius: 50px; /**/
   color: #fff;
-  cursor: pointer;
-  flex: 0.5;
-  margin: 10px;
-  position: relative;
-  -webkit-transition: all 700ms ease-in;
+  cursor: ew-resize;
+  flex: 0.5; /* whhill change on click to 5*/
+  margin: 10px; /* separation between divs*/
+  position: relative; /* container relative for h3 relative*/
+  transition: all 100ms ease-in-out;
 }
 
 .panel h3 {
@@ -39,7 +40,7 @@ body {
   bottom: 20px;
   left: 20px;
   margin: 0;
-  opacity: 0;
+  opacity: 0 /* will display if activce*/
 }
 
 .panel.active {
