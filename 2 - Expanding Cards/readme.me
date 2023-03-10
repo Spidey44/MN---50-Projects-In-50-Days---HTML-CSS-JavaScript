@@ -1,0 +1,18 @@
+#1 Expending cards notes
+Expending cards
+
+container around 5 divs 
+- 1 class with pannel active  + 4 class pannel
+- <div class="panel //active" style="background-image: url(‘xxxx’)”>
+        <h3>Tittle</h3>
+- container wrapped arround the panner for children: 
+    - flex = row; with 90vw = 90%; 
+- panel: background-zize auto or cover  100%; background position: center; background-repeat: no repeat, height: 80vh; border-radius: 50px (rounded corner), coloer whight, curser: pointer ( hover over); flex: 0.5 (same size). margin: 10px: (separated); ***position: relative (compare to the h3), transiton (time and type
+- panel h3: font-size, ****position: absolute, bottom+left, margin ???, opacitu 0
+- panel active: flex from 0.5 to 5 // panel active h3 opacity 1 
+- media query 0 for screen size under 480 change size container + remove display 4 and 5 cards
+
+JS change the classe on each
+- const panels with alls pannels class -> query selector all
+- console.log(panels[0]
+- pannels.forEach (panel) => {if event (event listener click0 then run fuction that remove all previous class active + add current to active}
