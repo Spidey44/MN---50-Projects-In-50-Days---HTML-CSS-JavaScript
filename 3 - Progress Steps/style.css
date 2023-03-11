@@ -41,7 +41,7 @@ body {
   left: 0;
   transform: translateY(-50%);
   height: 4px;
-  width: 100%; /*represent empty line*/
+  width: 100%; /*represent empty black reference line*/
   z-index: -1;
 }
 
@@ -51,8 +51,8 @@ body {
   top: 50%;/*middle vertically*/
   left: 0;
   transform: translateY(-50%);
-  height: 4px;
-  width: 0%;/*starting point of fill in with blue*/
+  height: 40px;
+  width: 0%;/*starting point of fill in with blue updated with js function*/
   z-index: -1;/*behind the number*/
   transition: 0.4s ease;
 }

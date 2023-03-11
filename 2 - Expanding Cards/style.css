@@ -7,9 +7,9 @@
 body {
   font-family: 'Muli', sans-serif;
   display: flex;
-  align-items: start; /* haut/bas =  start/end */
-  justify-content: center;
-  height: 100vh;
+  align-items: center; /* haut/bas =  start/end */
+  justify-content: center;/* haut/bas =  start/end */
+  height: 100vh;/* location from top to bottom, mid = 100vh */
   overflow: hhidden;
   margin: 0;
 }
