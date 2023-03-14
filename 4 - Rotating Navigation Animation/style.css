@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/*page background*/
 body {
   font-family: 'Lato', sans-serif;
   background-color: #333;
@@ -12,6 +13,7 @@ body {
   margin: 0;
 }
 
+/*container before rotation*/
 .container {
   background-color: #fafafa;
   transform-origin: top left;/* rotate conatainer at this location vs middle*/
@@ -21,7 +23,7 @@ body {
   padding: 50px; /* all around*/
 }
 
-/* rotate whhen container has this class*/
+/* container after rotation when this class added with tra*/
 .container.show-nav {
   transform: rotate(-20deg);
 }
@@ -29,26 +31,26 @@ body {
 .circle-container {
   position: fixed;
   top: -100px; /*half circle on the halp of the page*/
-  left: -100px;
+  left: -100px;  /*half circle on the halp of the page*/
 }
 
 /* at top right*/
 .circle {
   background-color: #ff7979;
-  height: 200px;
-  width: 200px;
-  border-radius: 50%;
+  height: 200px;  /*adjusted based on the circle container*/
+  width: 200px; /*adjusted based on the circle container*/
+  border-radius: 50%; /*makes the square a circle*/
   position: relative;
   transition: transform 0.5s linear;
 }
 
 .container.show-nav .circle {
-  transform: rotate(-70deg);
+  transform: rotate(-70deg); /*rotation makes the close button visible when class added to container*/
 }
 
 .circle button {
   cursor: pointer;
-  position: absolute; /*compare to circle */
+  position: absolute; /*compare to relative circle */
   top: 50%;
   left: 50%;
   height: 100px;
@@ -63,21 +65,22 @@ body {
 }
 
 .circle button#open {
-  left: 60%;
+  left: 60%; /*palce the menu button relative circle */
 }
 
 .circle button#close {
-  top: 60%;
+  top: 60%; /*palce the x button relative circle */
   transform: rotate(90deg);
   transform-origin: top left;
 }
 
-/* visible after the rotations*/
+/* menu from hidden to visible after the rotations*/
 .container.show-nav + nav li {
-  transform: translateX(0);
-  transition-delay: 0.3s;
+  transform: translateX(0);  /* bring menu to original place*/
+  transition-delay: 0.3s; /*delay after rotation*/
 }
 
+/* Nav menu at the bottom left fixed vs absolute or relatives*/
 nav {
   position: fixed;
   bottom: 40px;
@@ -86,37 +89,38 @@ nav {
 }
 
 nav ul {
-  list-style-type: none;
+  list-style-type: none;  /* remove bullet points*/
   padding-left: 30px;
 }
 
+/* style menu*/
 nav ul li {
   text-transform: uppercase;
   color: #fff;
   margin: 40px 0; /* separate menu from each other*/
-  transform: translateX(-100%);
+  transform: translateX(-100%); /* stop final position*/
   transition: transform 0.4s ease-in;
 }
 
 /* 1st LI*/
 nav ul li i {
-  font-size: 20px;
-  margin-right: 10px;
+  font-size: 20px; /* icon bigger*/
+  margin-right: 10px; /* space in between*/
 }
 /* 2nd LI*/
 nav ul li + li {
   margin-left: 15px;
-  transform: translateX(-150%);
+  transform: translateX(-150%);/* stop default hidden position*/
 }
 
 /* 3rds LI*/
 nav ul li + li + li {
   margin-left: 30px;
-  transform: translateX(-200%);
+  transform: translateX(-200%); /* stop default hidden  position*/
 }
 
 .content img {
-  max-width: 100%;
+  max-width: 100%;  /*image take full container space */
 }
 
 .content {
