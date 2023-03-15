@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* when class active -> input expend + bottom move */
 * {
   box-sizing: border-box;
 }
@@ -12,11 +12,11 @@ body {
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
+  margin: 0;/*page margin without weird backdound*/
 }
 
 .search {
-  position: relative;
+  position: relative; /*contain all the absolute*/
   height: 50px;
 }
 
@@ -27,7 +27,7 @@ body {
   padding: 15px;
   height: 50px;
   width: 50px;
-  transition: width 0.3s ease;
+  transition: width 0.5s ease;
 }
 
 .btn {
@@ -35,23 +35,23 @@ body {
   border: 0;
   cursor: pointer;
   font-size: 24px;
-  position: absolute;
+  position: absolute;/*placed within the search container*/
   top: 0;
   left: 0;
   height: 50px;
-  width: 50px;
-  transition: transform 0.3s ease;
+  width: 50px;/*make move from 200 to 50 when inactive*/
+  transition: transform 0.5s ease;/*when push the button over + same as input*/
 }
 
 .btn:focus,
 .input:focus {
-  outline: none;
+  outline:none; /*or solid, or 1rem solid; */
 }
 
 .search.active .input {
-  width: 200px;
+  width: 200px; /*make move from 50 to 200 when active*/
 }
 
 .search.active .btn {
-  transform: translateX(198px);
+  transform: translateX(198px); /*Make the button move over along the x axe to the right (+) */
 }
