@@ -5,7 +5,7 @@
 }
 
 body {
-  background-image: linear-gradient(90deg, #7d5fff, #7158e2);
+  background-image: linear-gradient(90deg, #edf1f4, #7158e2);
   font-family: 'Roboto', sans-serif;
   display: flex;
   align-items: center;
@@ -18,6 +18,7 @@ body {
 .search {
   position: relative; /*contain all the absolute*/
   height: 50px;
+  border: thick double green;
 }
 
 .search .input {
@@ -28,10 +29,11 @@ body {
   height: 50px;
   width: 50px;
   transition: width 0.5s ease;
+  border: thick double pink;
 }
 
 .btn {
-  background-color: #fff;
+  background-color: yellow;
   border: 0;
   cursor: pointer;
   font-size: 24px;
