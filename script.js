@@ -3,7 +3,7 @@ const bg = document.querySelector('.bg')
 
 let load = 0 //will go from 0 to 100
 
-let int = setInterval(blurring, 30) //increment every 30ms
+let int = setInterval(blurring, 70) //increment every 30ms
 
 function blurring() {
     load++ //increment load
@@ -14,9 +14,9 @@ function blurring() {
     }
 
     loadText.innerText = `${load}%`//text display load value
-    loadText.style.opacity = scale(load, 0, 100, 1, 0)
+    loadText.style.opacity = scale(load, 100, 0, 0, 1)
     //map value scale load time (0,100) to opacity(1 invisible ,0 visible)
-    bg.style.filter = `blur(${scale(load, 0, 100, 30, 0)}px)`
+    bg.style.filter = `blur(${scale(load, 100, 0, 0, 30)}px)`
     //map value scale load time (0,100)to blurr (30 to 0)
     //both in //
 }
