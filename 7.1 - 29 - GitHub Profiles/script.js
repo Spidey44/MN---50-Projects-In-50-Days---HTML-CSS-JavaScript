@@ -3,6 +3,44 @@ const APIURL = 'https://api.github.com/users/' //root URL
 const main = document.getElementById('main')
 const form = document.getElementById('form')
 const search = document.getElementById('search')
+const me = 'Spidey44'
+const me2 = 'Sfodifofofo'
+const me3 = 'johndoe'
+const me4 = 'ddd'
+
+// test API to see object fetched
+// Unlike FEtch, no async await needed 
+getUsertest(me)
+getUsertest(me2)
+getUsertest(me3)
+getUsertest(me4)
+
+function getUsertest(me) {
+    axios(APIURL + me)
+        .then(res => console.log(res.data))
+        .catch(err => console.log(err))
+};
+function getUsertest(me2) {
+    axios(APIURL + me2)
+        .then(res => console.log(res))
+        .catch(err => console.log(err))
+};
+async function getUsertest(me3) {
+    const resp = await axios(APIURL + me3)
+    console.log(res.data)
+
+};
+//destructure + try catch
+
+async function getUsertest(me4) {
+    try {
+        const { data } = await axios(APIURL + me4)
+        console.log(data)
+    } catch (err) {
+        console.log(err)
+    }
+
+};
 
 //request #1 to get the username
 async function getUser(username) {
@@ -82,7 +120,7 @@ function addReposToCard(repos) {
             reposEl.appendChild(repoEl) //Append repoEl item to a list
         })
 }
-
+//save the value on submit from the form on variable value
 form.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -97,7 +135,7 @@ form.addEventListener('submit', (e) => {
 
 /*
 LEARNINGS
-REST API with Axios object: CDN link to use library in Scrip tag
+REST API with Axios object to fetch DATA with CDN script tag link to access the library and make requests
 https://cdnjs.com/libraries/axios
 - axios.put(),axios.post(), axios.delete
 - axios.(URL) to get request 
