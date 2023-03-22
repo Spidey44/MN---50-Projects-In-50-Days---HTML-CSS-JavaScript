@@ -9,7 +9,7 @@ const me3 = 'johndoe'
 const me4 = 'ddd'
 
 // test API to see object fetched
-// Unlike FEtch, no async await needed 
+// Unlike Fetch, no async await needed 
 getUsertest(me)
 getUsertest(me2)
 getUsertest(me3)
