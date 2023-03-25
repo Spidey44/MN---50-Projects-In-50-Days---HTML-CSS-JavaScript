@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: steelblue;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 20px 40px;
+  /* imside container top and botton 20, left and right 40p */
+  border-radius: 5px;
+}
+
+.container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.container a {
+  text-decoration: none;
+  color: lightblue;
+}
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  width: 100%;
+  background: lightblue;
+  padding: 15px; /* all four paddings are 15px */
+  font-family: inherit;
+  font-size: 16px;
+  border: 0;
+  border-radius: 5px;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98); /* small effect sclade down */
+}
+
+.text {
+  margin-top: 30px;
+}
+
+.form-control {
+  position: relative;   /* label absolute */
+  margin: 20px 0 40px;   /* 20 top, right and left 0, bottom 40 */
+  width: 300px;
+}
+
+.form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #fff solid;   /* line form*/
+  display: block;   /* change from inline to block to have label under */
+  width: 100%;   /* line all the way accross */
+  padding: 15px 0;  /* top and bottom 25, right left 0*/
+  font-size: 18px;
+  color: #fff;
+}
+/* remove boarder in all conditions bellow */
+.form-control input:focus,
+.form-control input:valid {
+  outline: 0;
+  border-bottom-color: lightblue;
+}
+
+.form-control label {
+  position: absolute; /* from contro; relative */
+  top: 15px; 
+  left: 0; /* covering the label */
+  pointer-events: none;
+}
+
+/* Span JS used by JS */
+.form-control label span {
+  display: inline-block;
+  font-size: 18px; /* change the font */
+  min-width: 5px; 
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* curve smoth */
+}
+
+.form-control input:focus + label span,
+.form-control input:valid + label span {
+  color: lightblue;/* change the color */
+  transform: translateY(-30px);/* negative move up on y */
+}
