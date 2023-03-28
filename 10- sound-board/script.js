@@ -1,6 +1,6 @@
 
-// gather all variable in a array
-const sounds = ['applause', 'boo', 'gasp', 'tada', 'victory', 'wrong']
+// gather all variable in a array. if not, not be visible
+const sounds = ['rocket', 'cricket', 'barking', 'transition', 'emergency', 'applause', 'boo', 'gasp', 'tada', 'victory', 'wrong', 'test']
 
 // Loop through each and create a button element
 //add a class btn to the boutton for styling
