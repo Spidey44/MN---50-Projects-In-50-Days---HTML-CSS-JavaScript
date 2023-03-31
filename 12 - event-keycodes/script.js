@@ -12,9 +12,9 @@ const insert = document.getElementById('insert')
 
 window.addEventListener('keydown', (event) => {
   //template literal
+  // if this... then/? ...else/:...
   insert.innerHTML = `
   <div class="key">
-  //if this... then/? ...else/:...
   ${event.key === ' ' ? 'Space' : event.key} 
   <small>event.key</small>
 </div>
