@@ -16,7 +16,7 @@ h1 {
 
 .faq-container {
   max-width: 600px;
-  margin: 0 auto;
+  margin: 0 auto; /* center text auto top and bottom 0, left end right auto */
 }
 
 .faq {
@@ -26,28 +26,30 @@ h1 {
   margin: 20px 0;
   padding: 30px;
   position: relative;
-  overflow: hidden;
-  transition: 0.3s ease;
+  overflow: hidden;  /* nothing comes out of the container */
+  transition: 0.3s ease; /* smoth when open and close */
 }
 
 .faq.active {
   background-color: #fff;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
-
+/*  before and after pseudo selector*/
 .faq.active::before,
 .faq.active::after {
   content: '\f075';
+  /* add \ fbefore code */
+  /* https://fontawesome.com/icons/comment?f=sharp&s=regular*/
   font-family: 'Font Awesome 5 Free';
   color: #2ecc71;
-  font-size: 7rem;
-  position: absolute;
+  font-size: 7rem;/* 7 times the size root html */
+  position: absolute;/* within FAQ */
   opacity: 0.2;
   top: 20px;
   left: 20px;
   z-index: 0;
 }
-
+/* 2nf icone with the different colour, position and orientation */
 .faq.active::before {
   color: #3498db;
   top: -10px;
@@ -60,9 +62,14 @@ h1 {
 }
 
 .faq-text {
+  /* no display unless active class 
+  if active display as block */
   display: none;
   margin: 30px 0 0;
 }
+
+/* expanded dont show the chevron*/
+/* contracted dont show the x or times*/
 
 .faq.active .faq-text {
   display: block;
