@@ -32,6 +32,7 @@ body {
 }
 
 .key small {
+/* <div class="key"> <small>event.keyCode</small> */
   position: absolute;
   top: -24px; /* out of the box, above*/
   left: 0; /* at the very left*/
