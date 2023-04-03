@@ -20,30 +20,30 @@ h1 {
 }
 
 .faq {
-  background-color: transparent;
+  background-color: transparent; /* inactive transoarent */
   border: 1px solid #9fa4a8;
-  border-radius: 10px;
-  margin: 20px 0;
-  padding: 30px;
-  position: relative;
+  border-radius: 10px; /* corner rounded */
+  margin: 20px 0;/* spread out all the FAQ*/
+  padding: 30px; /* add space inside FAQ all 4 sides*/
+  position: relative; /* FAQ icons and button*/
   overflow: hidden;  /* nothing comes out of the container */
   transition: 0.3s ease; /* smoth when open and close */
 }
 
 .faq.active {
-  background-color: #fff;
+  background-color: #fff; /* active transoarent */
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 /*  before and after pseudo selector*/
 .faq.active::before,
 .faq.active::after {
-  content: '\f075';
-  /* add \ fbefore code */
+  content: '\f075'; /* can be hello or any other value*/
+  /* add icon with css with \ fbefore unicode value*/
   /* https://fontawesome.com/icons/comment?f=sharp&s=regular*/
   font-family: 'Font Awesome 5 Free';
   color: #2ecc71;
   font-size: 7rem;/* 7 times the size root html */
-  position: absolute;/* within FAQ */
+  position: absolute;/* within FAQ for both before and after*/
   opacity: 0.2;
   top: 20px;
   left: 20px;
@@ -63,7 +63,7 @@ h1 {
 
 .faq-text {
   /* no display unless active class 
-  if active display as block */
+  then active will display as block */
   display: none;
   margin: 30px 0 0;
 }
@@ -77,7 +77,7 @@ h1 {
 
 .faq-toggle {
   background-color: transparent;
-  border: 0;
+  border: 0; /* take away boarder*/
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -85,7 +85,7 @@ h1 {
   justify-content: center;
   font-size: 16px;
   padding: 0;
-  position: absolute;
+  position: absolute; /* relative to FAQ */
   top: 30px;
   right: 30px;
   height: 30px;
@@ -93,22 +93,23 @@ h1 {
 }
 
 .faq-toggle:focus {
-  outline: 0;
+  outline: 0;/* Fwont see the button shape on focus*/
 }
 
+/* FAQ with x button no active*/
 .faq-toggle .fa-times {
   display: none;
 }
-
+/* FAQ with x button active*/
 .faq.active .faq-toggle .fa-times {
   color: #fff;
   display: block;
 }
-
+/* FAQ with chevron button no active*/
 .faq.active .faq-toggle .fa-chevron-down {
   display: none;
 }
-
+/* FAQ with x button grey if toggle active*/
 .faq.active .faq-toggle {
   background-color: #9fa4a8;
 }

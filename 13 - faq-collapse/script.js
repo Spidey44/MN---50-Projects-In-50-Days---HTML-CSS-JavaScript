@@ -8,6 +8,7 @@ const toggles = document.querySelectorAll('.faq-toggle')
 toggles.forEach(toggle => {
     toggle.addEventListener('click', () => {
         //toggle method makes it easier to add and remove
+        //no longer use jquery
         toggle.parentNode.classList.toggle('active')
     })
 })
