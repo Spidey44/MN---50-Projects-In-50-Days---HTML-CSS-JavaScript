@@ -46,7 +46,7 @@ textarea {
   font-size: 14px;
   display: inline-block;
 }
-
+/* select random color */
 .tag.highlight {
   background-color: #273c75;
 }
