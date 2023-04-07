@@ -6,7 +6,8 @@
 
 body {
   background-color: #eafbff;
-  /* 2 colors with different % */
+  /* 2 background colour with 2 colors 
+  bottom 0-50%, color#1, top 50 to 100% color#2 */
   background-image: linear-gradient(
     to bottom,
     #eafbff 0%,
@@ -39,7 +40,7 @@ nav.active {
 }
 
 nav ul {
-  display: flex;
+  display: flex; /* All items from default colum to row*/
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -48,7 +49,7 @@ nav ul {
 }
 
 nav.active ul {
-  width: 100%; /* inactive to decrease to 0%*/
+  width: 100%; /* On ul only - inactive to decrease to 0%*/
 }
 
 nav ul li {
@@ -65,7 +66,7 @@ nav.active ul li {
 nav ul a {
   position: relative;
   color: #000;
-  text-decoration: none;
+  text-decoration: none; /*underline removed*/
   margin: 0 10px; /* links spread out*/
 }
 
@@ -75,13 +76,13 @@ nav ul a {
   border: 0;
   cursor: pointer;
   padding: 0;
-  position: relative;/* line insite are absolute*/
+  position: relative;/* line inside are absolute*/
   height: 30px;
   width: 30px;
 }
 
 .icon:focus {
-  outline: 0;
+  outline: 0; /*square when hover over*/
 }
 /* 2 divs inside the buttons with class of line each*/
 .icon .line {
