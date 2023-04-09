@@ -1,6 +1,6 @@
 // update inner text of counter
 const counters = document.querySelectorAll('.counter')
-
+//return a n0de list = array
 counters.forEach(counter => {
     //SET to string of 0 by default
     counter.innerText = '0'
@@ -12,7 +12,7 @@ counters.forEach(counter => {
         console.log(typeof target, target)
         //GET what's in the innertext
         const c = +counter.innerText
-        //increment by, bigger, faster.
+        //increment by, bigger, faster
         const increment = target / 200
         console.log(increment)
         //increment as long as under the target. ass finish same
