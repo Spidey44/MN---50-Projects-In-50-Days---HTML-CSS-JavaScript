@@ -1,4 +1,4 @@
-//https://www.themoviedb.org/documentation/api
+//
 // endpoints https://www.themoviedb.org/documentation/api/discover
 //https://www.themoviedb.org/settings/api
 const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=2899a1747cce1d81caa27b9ed1789627&page=1'
@@ -6,7 +6,7 @@ const API_URL = 'https://api.themoviedb.org/3/discover/movie?sort_by=popularity.
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280'
 //URL before using image as per documentation - https://developers.themoviedb.org/3/getting-started/images
 //p/w1280 being the size
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=2899a1747cce1d81caa27b9ed1789627c&query="'
+const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=2899a1747cce1d81caa27b9ed1789627&query="'
 //concatenate search to query
 const main = document.getElementById('main')
 const form = document.getElementById('form')
@@ -21,20 +21,22 @@ async function getMovies(url) {
     //translate in JSON
     const data = await res.json()
     //array of 20 objcts
-    console.log(data.results)
+    console.log('#1 array with 20 obj ' + data.results)
 
     showMovies(data.results)
 }
 
+//Display movie into the DOM
 function showMovies(movies) {
-    //clear the mean
+    //clear the mean to avoid add up search
     main.innerHTML = ''
     //loop through data fetched
     movies.forEach((movie) => {
         //destucturing
         const { title, poster_path, vote_average, overview } = movie
-
+        //create  new div
         const movieEl = document.createElement('div')
+        //add movie element to it
         movieEl.classList.add('movie')
 
         movieEl.innerHTML = `
@@ -52,6 +54,7 @@ function showMovies(movies) {
         main.appendChild(movieEl)
     })
 }
+//utility function
 //pass the vote rating into the functin to determine colour
 //result go to class="${getClassByRate(vote_average)}"
 function getClassByRate(vote) {
@@ -74,6 +77,7 @@ form.addEventListener('submit', (e) => {
         //clear the search
         search.value = ''
     } else {
+        //reload the page if empty
         window.location.reload()
     }
 })

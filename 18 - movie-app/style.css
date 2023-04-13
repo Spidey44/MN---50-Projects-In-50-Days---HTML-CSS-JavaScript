@@ -106,7 +106,7 @@ main {
   right: 0;
   max-height: 100%;
   transform: translateY(101%); 
-  /* 100 of eigt+ 1% make it offscreen and 
+  /* 100 of eigt+ 1% (positive number) make it offscreen and 
   display based on hover the box movie*/
   transition: transform 0.3s ease-in;
   /* with transition slide up on Y */
