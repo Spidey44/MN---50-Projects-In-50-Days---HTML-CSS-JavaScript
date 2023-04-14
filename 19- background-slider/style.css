@@ -13,32 +13,39 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
+  /* add background-image: url() here to double check properties */
   background-position: center center; /* background center in x and y axes */
   background-size: cover;/* the image is rendered at the largest size contained within, or covering, the background positioning are */
   transition: 0.4s;
 }
-
+/* overlay */
 body::before {
   content: '';
   position: absolute;
+  /* start point is top left corner 0 */
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.7);
+  /* overlay on top of the background  with z index*/
   z-index: -1;
 }
 
+/* mid box container */
 .slider-container {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
   height: 70vh;
   width: 70vw;
+  /* slide ablosulte within the container */
   position: relative;
   overflow: hidden;
 }
 
+/* multiple slide opacity 0, only 1 with active with opacity 1*/
 .slide {
   opacity: 0;
+  /* inline image displayed here */
   height: 100vh;
   width: 100vw;
   background-position: center center;
@@ -47,6 +54,7 @@ body::before {
   top: -15vh;
   left: -15vw;
   transition: 0.4s ease;
+  /* always on top */
   z-index: 1;
 }
 
@@ -55,13 +63,16 @@ body::before {
 }
 
 .arrow {
+  /* both on same spot */
   position: fixed;
   background-color: transparent;
   color: #fff;
   padding: 20px;
   font-size: 30px;
   border: 2px solid orange;
+  /* move to the midle vertical*/
   top: 50%;
+  /* mode to the exact middle within Y */
   transform: translateY(-50%);
   cursor: pointer;
 }
@@ -70,6 +81,7 @@ body::before {
   outline: 0;
 }
 
+/* both arrow position fixed */
 .left-arrow {
   left: calc(15vw - 65px);
 }
