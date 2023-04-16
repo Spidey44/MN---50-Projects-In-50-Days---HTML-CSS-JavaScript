@@ -14,6 +14,7 @@ body {
   overflow: hidden;
   margin: 0;
   /* add background-image: url() here to double check properties */
+  /* remove the hard coded bgimage url('' by function setBgToBody()*/
   background-position: center center; /* background center in x and y axes */
   background-size: cover;/* the image is rendered at the largest size contained within, or covering, the background positioning are */
   transition: 0.4s;
@@ -64,6 +65,8 @@ body::before {
 
 .arrow {
   /* both on same spot */
+  /* temproary z index to 100 make it visible 
+  remove prevent see the edge on top of image*/
   position: fixed;
   background-color: transparent;
   color: #fff;
@@ -72,7 +75,7 @@ body::before {
   border: 2px solid orange;
   /* move to the midle vertical*/
   top: 50%;
-  /* mode to the exact middle within Y */
+  /* mode to the exact middle within Y instead of the top edge*/
   transform: translateY(-50%);
   cursor: pointer;
 }
