@@ -35,7 +35,7 @@ body {
   margin: 0;
 }
 
-/* bouton mode*/
+/* bouton mode trigger property change*/
 .toggle {
   cursor: pointer;
   background-color: var(--primary-color);
@@ -60,7 +60,7 @@ body {
   align-items: center;
 }
 
-/* clock square shape */
+/* clock square shape tha contains all needle */
 .clock {
   position: relative;
   width: 200px;
@@ -69,6 +69,7 @@ body {
 }
 
 /* base niddle class without hour, min, seconds */
+/* 3 original needle are vertical line in middle/bottom */
 .needle {
   background-color: var(--primary-color);
   /* clock class is relative */
@@ -116,8 +117,9 @@ body {
   border-radius: 50%;
 }
 
-/* smaller black dot */
+/* 2nd circle, smaller black dot */
 .center-point::after {
+  /* needs comtent empty */
   content: '';
   background-color: var(--primary-color);
   width: 5px;
@@ -140,7 +142,7 @@ body {
   text-transform: uppercase;
 }
 
-/* #day of the month */
+/* cicle for the #day of the month */
 .date .circle {
   background-color: var(--primary-color);
   color: var(--secondary-color);
