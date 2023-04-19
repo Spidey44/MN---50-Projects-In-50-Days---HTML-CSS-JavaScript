@@ -5,17 +5,17 @@ buttons.forEach(button => {
     button.addEventListener('click', function (e) {
         const x = e.clientX
         const y = e.clientY
-        //dynamic position
-        console.log('click position from the left is ' + x)
-        console.log('click position from the top is ' + y)
+        //dynamic wiewport position
+        console.log('click wiewport position from the left is ' + x)
+        console.log('click wiewport position from the top is ' + y)
 
-        //static position
+        //static button position
         const buttonTop = e.target.offsetTop
         console.log('button position from the left is ' + buttonTop)
         const buttonLeft = e.target.offsetLeft
         console.log('button position from the left is ' + buttonLeft)
 
-        //click within the buttion      
+        //calculate click within the button      
         const xInside = x - buttonLeft
         const yInside = y - buttonTop
 
@@ -26,6 +26,7 @@ buttons.forEach(button => {
         circle.style.left = xInside + 'px'
 
         //THIS works with regular funciton only, not arrow funciton     
+        //add constante circle into the DOM
         this.appendChild(circle)
 
         //take out of the dom otherwise keep accumulated in DOM

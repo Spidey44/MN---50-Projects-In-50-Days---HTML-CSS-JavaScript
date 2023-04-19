@@ -23,6 +23,7 @@ button {
   font-size: 14px;
   text-transform: uppercase;
   letter-spacing: 2px;
+  /* top and bottom/ left right */
   padding: 20px 30px;
   overflow: hidden;
   margin: 10px 0;
@@ -41,14 +42,16 @@ button .circle {
   background-color: #fff;
   width: 100px;
   height: 100px;
+  /* white square */
   border-radius: 50%;
   transform: translate(-50%, -50%) scale(0);
+  /* middle of the point */
   animation: scale 0.5s ease-out;
 }
 
 @keyframes scale {
   to {
-    /* animation from scale 0/opacity 0 to scale 3/opacity3 */
+    /* animation from origial scale 0/opacity 0 to scale 3/opacity3 */
     transform: translate(-50%, -50%) scale(3);
     opacity: 0;
   }
