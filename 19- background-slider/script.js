@@ -9,6 +9,10 @@ let activeSlide = 0
 rightBtn.addEventListener('click', () => {
   // as i change setBgToBody(), increment activeSlide ( middle image)
   activeSlide++
+  console.log("slides + " + slides)
+  //Executes a provided function once per NodeList element, passing the element as an argument to the function.
+  slides.forEach(slide => console.log("test dir", slide.parentElement))
+  console.log("first + " + activeSlide)
 
   //active list retruns to 0, starts over after last
   if (activeSlide > slides.length - 1) {
@@ -16,7 +20,9 @@ rightBtn.addEventListener('click', () => {
   }
   // initial when set to 0
   setBgToBody()
+  console.log("second + ", activeSlide)
   setActiveSlide()
+  console.log("third + ", activeSlide)
 })
 
 leftBtn.addEventListener('click', () => {
