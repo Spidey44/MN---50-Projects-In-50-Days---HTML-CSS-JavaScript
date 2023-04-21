@@ -21,25 +21,31 @@ body {
   background: white;
 }
 
-/* random image everytime */
+/* random image every time */
+/* drag event */
 .fill {
+  /* size incuded in URL 150x150 */
   background-image: url('https://source.unsplash.com/random/150x150');
   height: 145px;
   width: 145px;
   cursor: pointer;
 }
-/* boxes style when dragged */
+/* boxes style when hold/ dragged */
 /* test by adding hold class to box */
+/* drag event */
 .hold {
   border: solid 5px #ccc;
 }
+
 /* when box above another box */
+/* drag event */
 .hovered {
   background-color: #333;
   border-color: white;
   border-style: dashed;
 }
 
+/* smaller resolution */
 @media (max-width: 800px) {
   body {
     flex-direction: column;

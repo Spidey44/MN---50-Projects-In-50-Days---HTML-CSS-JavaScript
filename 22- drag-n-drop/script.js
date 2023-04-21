@@ -8,16 +8,17 @@ fill.addEventListener('dragend', dragEnd)
 
 // each element of node list
 for (const empty of empties) {
-    // fireoff everytime over a emptu box
+    // fireoff everytime over a empty box
     empty.addEventListener('dragover', dragOver)
     empty.addEventListener('dragenter', dragEnter)
     empty.addEventListener('dragleave', dragLeave)
     empty.addEventListener('drop', dragDrop)
 }
-// each functon fire off when certain action
+// each functon fire off when certain action/ drag event
 function dragStart() {
     // on the fill class element
     console.log('drag start')
+    // += ameansppend
     this.className += ' hold'
     // give time to make original box invisible
     setTimeout(() => this.className = 'invisible', 0)
@@ -48,7 +49,7 @@ function dragLeave() {
     // reset to empty or clear the dark as i leave
     this.className = 'empty'
 }
-
+// once over the box, move the image from empty to fill
 function dragDrop() {
     console.log('drag drop')
     this.className = 'empty'
