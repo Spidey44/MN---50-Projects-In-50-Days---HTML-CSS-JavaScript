@@ -11,22 +11,28 @@ body {
   overflow: hidden;
   margin: 0;
 }
-
+/* only class available */
 .kinetic {
   position: relative;
+  /* compare to before and after classes pseudo selector*/
   height: 80px;
   width: 80px;
 }
-
+/* two triangles */
 .kinetic::after,
 .kinetic::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
+  /* triangle => box with height and width of 0 */
   width: 0;
   height: 0;
+  /* bigger the boarder, bigger the triangle */
   border: 50px solid transparent;
+  /* outside boarder transparent makes the triangle */
+  /* triangle facing down -> border-top-color: #fff*/
+  /* timer doulbe triangle -> border-top-color: #fff & border-bottom-color: #fff*/
   border-bottom-color: #fff;
   animation: rotateA 2s linear infinite 0.5s;
 }
@@ -36,6 +42,7 @@ body {
   animation: rotateB 2s linear infinite;
 }
 
+/* animation */
 @keyframes rotateA {
   0%,
   25% {
