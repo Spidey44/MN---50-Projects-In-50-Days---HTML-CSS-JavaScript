@@ -18,7 +18,7 @@ body {
   height: 80px;
   width: 80px;
 }
-/* two triangles */
+/* bring two triangles positionned in same place*/
 .kinetic::after,
 .kinetic::before {
   content: '';
@@ -32,17 +32,19 @@ body {
   border: 50px solid transparent;
   /* outside boarder transparent makes the triangle */
   /* triangle facing down -> border-top-color: #fff*/
-  /* timer doulbe triangle -> border-top-color: #fff & border-bottom-color: #fff*/
+  /* timer double triangle -> border-top-color: #fff & border-bottom-color: #fff*/
   border-bottom-color: #fff;
   animation: rotateA 2s linear infinite 0.5s;
 }
 
+/* rotate before initially */
 .kinetic::before {
   transform: rotate(90deg);
   animation: rotateB 2s linear infinite;
 }
 
-/* animation */
+/* animation Google Keyframe %*/
+/* rotate A and B attached to animation kenetic before */
 @keyframes rotateA {
   0%,
   25% {
@@ -58,7 +60,7 @@ body {
     transform: rotate(360deg);
   }
 }
-
+/* same as rotateA with different values */
 @keyframes rotateB {
   0%,
   25% {
