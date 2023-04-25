@@ -18,13 +18,13 @@ body {
 canvas {
   border: 2px solid steelblue;
 }
-
+/* has all the Canvas controls */
 .toolbox {
   background-color: steelblue;
   border: 1px solid slateblue;
   /* all element inside displayed as flex items */
   display: flex;
-  /* fill up the entire canvas */
+  /* same size as the canvas */
   width: 804px;
   padding: 1rem;
 }
@@ -50,7 +50,7 @@ canvas {
   padding: 0.25rem;
   cursor: pointer;
 }
-/* last  element, X, pushed over to the side */
+/* last  element/child, X, pushed over to the side */
 .toolbox > *:last-child {
   margin-left: auto;
 }
