@@ -14,7 +14,7 @@ body {
   overflow: hidden;
   margin: 0;
 }
-
+/* 100% of its container */
 img {
   max-width: 100%;
 }
@@ -41,6 +41,7 @@ img {
 /* below image container */
 .card-content {
   background-color:pink;
+  /* move from the side */
   padding: 30px;
 }
 /* below image title */
@@ -53,15 +54,16 @@ img {
 .card-excerpt {
   color: #777;
   margin: 10px 0 20px;
-  color: green;
+
 }
 /* below text container */
 .author {
-  /* all aligned */
+  /* all aligned -> auto in flex row*/
   display: flex;
   background-color:blue;
 }
 
+/* div around the image */
 .profile-img {
   border-radius: 50%;
   /* image pop out of the div */
@@ -71,12 +73,15 @@ img {
   width: 40px;
 }
 
-/* name and date on top of each other */
+/* name and date*/
 .author-info {
   display: flex;
   flex-direction: column;
+  /* flex column top of each other */
   justify-content: space-around;
+  /* space between date and name  */
   margin-left: 10px;
+  /* move away from img */
   width: 100px;
 }
 
@@ -85,7 +90,7 @@ img {
   margin-top: 5px;
 }
 
-/* gray  behind the text */
+/* gray  behind the text with 4 light grays color*/
 .animated-bg {
   background-image: linear-gradient(
     to right,
@@ -99,6 +104,7 @@ img {
   animation: bgPos 1s linear infinite;
 }
 
+/* 3 gray lines all the way across */
 .animated-bg-text {
   border-radius: 50px;
   display: inline-block;
