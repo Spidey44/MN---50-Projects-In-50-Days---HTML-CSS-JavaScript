@@ -2,7 +2,7 @@
 
 * {
   box-sizing: border-box;
-  /* entire page without padding, margin */
+  /* reset = entire page without default padding, margin */
   margin: 0;
   padding: 0;
 }
@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  /* page expand up to 12000 or middle 
+  /* page expand up to 1200 or middle 
   Nav included*/
   max-width: 1200px;
   margin: 0 auto;
@@ -27,6 +27,7 @@ body {
   position: fixed;
   background-color: #222;
   /* background color take up full top space */
+   /* 0, 0, 0 go all the way accross */
   top: 0;
   left: 0;
   right: 0;
@@ -35,14 +36,14 @@ body {
 }
 
 /* under container logo on one side, ul on other side flex item
--> makes container flexbox*/
+-> makes container flexbox NOT THE NAV*/
 .nav .container {
   display: flex;
   /* logo and UL side by side */
   justify-content: space-between;
   /* both push to the side */
   align-items: center;
-  /* centered horizontally */
+  /* centered vertically */
   padding: 20px 0;
   /* padding top and bottom */
   transition: all 0.3s ease-in-out;
@@ -71,14 +72,17 @@ body {
 Small padding and reverse color*/
 .nav.active {
   background-color: #fff;
+  /* box shadow = ombre when scroll down*/
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .nav.active a {
+   /* navbar link black when scroll down */
   color: #000;
 }
 
 .nav.active .container {
+  /* navbar skinnier when scroll down */
   padding: 10px 0;
 }
 
@@ -89,6 +93,8 @@ Small padding and reverse color*/
   font-weight: bold;
 }
 
+/* take up the full screen+ background image + overlay  */
+/* when scroll, can see the rest of the content */
 .hero {
   background-image: url('https://images.pexels.com/photos/450035/pexels-photo-450035.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-repeat: no-repeat;
@@ -109,23 +115,26 @@ Small padding and reverse color*/
   position: relative;
   margin-bottom: 20px;
   /* behind 2 levels -> text readable*/
+  /* IMage then overlay then text */
   z-index: -2;
 }
 
-/* add overlay page */
+/* add overlay page with pseudo selector */
 .hero::before {
+  /* must with :: before or ::after to store something*/
   content: '';
-  /* compare to hero */
+  /* within the hero */
   position: absolute;
   /* location starting */
   top: 0;
   left: 0;
-  /* take up full hero, height an width */
+  /* take up full hero, height an width*/
   width: 100%;
   height: 100%;
-  /* dark color makes it not visible */
+  /* dark color makes it not visible 
+  test with solid color*/
   background-color: rgba(0, 0, 0, 0.5);
-   /* behind 1 level -> text readable*/
+   /* push behind 1 level -> text readable*/
   z-index: -1;
 }
 /* PAge title */
