@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+* {
+  box-sizing: border-box;
+  /* 4 color boxes take up all horizontal  */
+  margin: 0;
+  padding: 0;
+   /* reset all set them all at the top */
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  height: 100vh;
+}
+/* wrap everything */
+.slider-container {
+  position: relative;
+  /* all absolute from main container */
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  /* container takes entire page */
+}
+
+.left-slide {
+  height: 100%;
+  width: 35%;
+  /* of the page take 35 from left */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* starting 0, 0 */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* immediate div inside left side */
+.left-slide > div {
+  height: 100%;
+  width: 100%;
+  /* each color takes 100% of 35% */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* text inside 1 color centered */
+  justify-content: center;
+  color: #fff;
+}
+
+.left-slide h1 {
+  font-size: 40px;
+  /* size title */
+  margin-bottom: 10px;
+  /* space with para */
+  margin-top: -30px;
+  /* pull up title */
+}
+
+.right-slide {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 35%;
+  /* start 0, 35% over from the left*/
+  width: 65%;
+  /* smooth transition */
+  transition: transform 0.5s ease-in-out;
+}
+
+/* show image target the div */
+.right-slide > div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  /* to make it visible height and width */
+  height: 100%;
+  width: 100%;
+  
+}
+
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  /* padding makes button larger */
+  padding: 15px;
+}
+
+button:hover {
+  /* darker button is hover */
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+.slider-container .action-buttons button {
+  position: absolute;
+  left: 35%;
+  top: 50%;
+  /* both button always on top */
+  z-index: 100;
+}
+
+.slider-container .action-buttons .down-button {
+  /* Negative move the button over to the left (x)100% move to right */
+  transform: translateX(-100%);
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.slider-container .action-buttons .up-button {
+  /* Negative move the button up (y) 100% move to right */
+  transform: translateY(-100%);
+  /* rounder button opposite of the previous ones */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
