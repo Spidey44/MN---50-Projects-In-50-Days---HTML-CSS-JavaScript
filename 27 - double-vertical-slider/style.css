@@ -25,7 +25,7 @@ body {
 .left-slide {
   height: 100%;
   width: 35%;
-  /* of the page take 35 from left */
+  /* of the page take 35% of container from left */
   position: absolute;
   top: 0;
   left: 0;
@@ -37,12 +37,14 @@ body {
 .left-slide > div {
   height: 100%;
   width: 100%;
-  /* each color takes 100% of 35% */
+  /* each color takes entire vertical/100% of 35% */
   display: flex;
   flex-direction: column;
+  /* flex column = row /horizontal */
   align-items: center;
   /* text inside 1 color centered */
   justify-content: center;
+  /* text centered in vertical */
   color: #fff;
 }
 
@@ -66,8 +68,9 @@ body {
   transition: transform 0.5s ease-in-out;
 }
 
-/* show image target the div */
+/* show image url target the div */
 .right-slide > div {
+  /* background image already set inline */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -98,12 +101,15 @@ button:focus {
 
 .slider-container .action-buttons button {
   position: absolute;
+  /* button location to corner to left */
   left: 35%;
+  /* button location corner to down */
   top: 50%;
   /* both button always on top */
   z-index: 100;
 }
 
+/* ARROW POSITIONING and Shate */
 .slider-container .action-buttons .down-button {
   /* Negative move the button over to the left (x)100% move to right */
   transform: translateX(-100%);
