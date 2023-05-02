@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rebeccapurple;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.btn {
+  background-color: #ffffff;
+  color: rebeccapurple;
+  font-family: inherit;
+   /* inherit poppins */
+  font-weight: bold;
+  padding: 1rem;
+  /* padding makes button larger */
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  /* buttom scale down effect when clicked */
+  transform: scale(0.98);
+}
+
+/* ID toasts plural is the container 
+need to display fixed down bottom corner*/
+#toasts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  /* position can be anywhere */
+  display: flex;
+  flex-direction: column;
+  /* align to the end */
+  align-items: flex-end;
+}
+
+/* each toast displayed */
+.toast {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  /* all notifications separated out 0.5 margin*/
+  margin: 0.5rem;
+}
+
+.toast.info {
+  color: rebeccapurple;
+}
+
+.toast.success {
+  color: green;
+}
+
+.toast.error {
+  color: red;
+}
