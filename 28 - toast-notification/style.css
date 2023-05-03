@@ -34,11 +34,12 @@ body {
 }
 
 .btn:active {
-  /* buttom scale down effect when clicked */
+  /* button scale down effect when clicked */
   transform: scale(0.98);
 }
 
 /* ID toasts plural is the container 
+can be a class of toasts
 need to display fixed down bottom corner*/
 #toasts {
   position: fixed;
@@ -47,8 +48,9 @@ need to display fixed down bottom corner*/
   /* position can be anywhere */
   display: flex;
   flex-direction: column;
-  /* align to the end */
+  /* row on top of each other */
   align-items: flex-end;
+   /* align to the bottom right end */
 }
 
 /* each toast displayed */

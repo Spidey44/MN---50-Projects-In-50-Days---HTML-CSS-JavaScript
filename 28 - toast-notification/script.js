@@ -1,4 +1,5 @@
 const button = document.getElementById('button')
+// toasts container
 const toasts = document.getElementById('toasts')
 
 // option 1 below: array of random message
@@ -18,6 +19,7 @@ button.addEventListener('click', () => createNotification())
 
 // create notification
 function createNotification(message = null, type = null) {
+    console.log("test create notification")
     //    create div element with class of toast
     const notif = document.createElement('div')
     notif.classList.add('toast')
@@ -28,14 +30,13 @@ function createNotification(message = null, type = null) {
     // select random index from the array "messages"
     notif.innerText = message ? message : getRandomMessage()
 
-    // add the notif element created to DOM
+    // add the created "notif" element into the "toasts" container
     toasts.appendChild(notif)
 
     // remove each notif element added to DOM after 3 sec
     setTimeout(() => {
         notif.remove()
     }, 3000)
-    console.log("123")
 }
 
 function getRandomMessage() {
@@ -46,3 +47,4 @@ function getRandomMessage() {
 function getRandomType() {
     return types[Math.floor(Math.random() * types.length)]
 }
+// can pass a message into create notification otherwise everithing is random
