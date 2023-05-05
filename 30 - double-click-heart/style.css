@@ -18,17 +18,18 @@ h3 {
 }
 
 small {
+  /*  small is inline default */
   display: block;
   margin-bottom: 20px;
   text-align: center;
 }
 
-/* red heart icon */
+/* red heart icon on click */
 .fa-heart {
   color: red;
 }
 
-/* love me class image */
+/* love me class is the whole image */
 .loveMe {
   height: 440px;
   width: 300px;
@@ -43,16 +44,18 @@ small {
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
+/* heart in love me class */
 .loveMe .fa-heart {
   position: absolute;
   /* animation added by JS */
   animation: grow 0.6s linear;
+  /* location start in the middle */
   transform: translate(-50%, -50%) scale(0);
 }
 
 @keyframes grow {
   /* change the scaling up from regular size */
-  /* show scale and dissapear */
+  /* show scale and disappear */
   to {
     transform: translate(-50%, -50%) scale(10);
     opacity: 0;
