@@ -1,0 +1,93 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #3b3b98;
+  color: #fff;
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  padding: 10px;
+  margin: 0;
+}
+
+/* Password Generator title */
+h2 {
+  margin: 10px 0 20px;
+  text-align: center;
+}
+/* wraps around everything */
+.container {
+  background-color: #23235b;
+  box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  width: 350px;
+  max-width: 100%;
+}
+/* Wraps the pwd result and button */
+.result-container {
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  /* button inside ill be absolute */
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 1px;
+  padding: 12px 10px;
+  height: 50px;
+  width: 100%;
+}
+
+/* result inserted */
+.result-container #result {
+  /* break and wrap the long word onto the next line: */
+  word-wrap: break-word;
+  /* No result behind the 40px button */
+  max-width: calc(100% - 40px);
+}
+
+/* Icon button only -> */
+.result-container .btn {
+  /* inside result container */
+  position: absolute;
+  /* button location */
+  top: 5px;
+  right: 5px;
+    /* button size */
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+
+/* both icon and generate pwd buttons */
+.btn {
+  border: none;
+  background-color: #3b3b98;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+/* Generate pwd buttons only, goes across entire container*/
+.btn-large {
+  display: block;
+  width: 100%;
+}
+
+.setting {
+  /* has a label and an input */
+  /* push both to each side */
+  display: flex;
+  justify-content: space-between;
+  /* align on vertical axe with 15px spacing */
+  align-items: center;
+  margin: 15px 0;
+}
