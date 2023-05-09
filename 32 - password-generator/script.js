@@ -25,10 +25,13 @@ clipboardEl.addEventListener('click', () => {
     // if no password return nothing
     if (!password) { return }
 
-    //otherwise pass the new pwd
+    //add the value to text area created
     textarea.value = password
+    //append text into the body
     document.body.appendChild(textarea)
+    // select everything in text area
     textarea.select()
+    // copy
     document.execCommand('copy')
     // Once copied remove from DOM
     textarea.remove()
@@ -59,11 +62,16 @@ function generatePassword(lower, upper, number, symbol, length) {
     const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0])
     console.log("typesArr with all true input type selected", typesArr)
     if (typesCount === 0) {
-        // if nothing return empty string
+        // REmove undefined -> If nothing return empty string
         return ''
     }
 
     // Create the password on demand in same order type
+    // as long as no # > length 
+    // go through 'randomFunc' each type ( key pair type/ value)
+    // increment type  by one
+    // append to generatedPassword
+    // example lower[0], upper[0], number[0], symbol[0], lower[1], upper[1], number[1], symbol[1]
     for (let i = 0; i < length; i += typesCount) {
         typesArr.forEach(type => {
             console.log("type ", type)
@@ -75,6 +83,7 @@ function generatePassword(lower, upper, number, symbol, length) {
         })
     }
 
+    // from array to list
     const finalPassword = generatedPassword.slice(0, length)
 
     return finalPassword
