@@ -44,9 +44,9 @@ clipboardEl.addEventListener('click', () => {
     //     }
     //   }
 
-    copyToClipboard('Some text to copy');
+    // copyToClipboard('Some text to copy');
 
-    copyToClipboard('Some text to copy');
+    // copyToClipboard('Some text to copy');
     // Once copied remove from DOM
     textarea.remove()
     // Alert
