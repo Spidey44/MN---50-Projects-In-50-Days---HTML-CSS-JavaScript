@@ -33,6 +33,20 @@ clipboardEl.addEventListener('click', () => {
     textarea.select()
     // copy
     document.execCommand('copy')
+
+    // Clipboard API
+    // async function copyToClipboard(text) {
+    //     try {
+    //       await navigator.clipboard.writeText(text);
+    //       console.log('Text copied to clipboard');
+    //     } catch (err) {
+    //       console.error('Error in copying text: ', err);
+    //     }
+    //   }
+
+    copyToClipboard('Some text to copy');
+
+    copyToClipboard('Some text to copy');
     // Once copied remove from DOM
     textarea.remove()
     // Alert
