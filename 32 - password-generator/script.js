@@ -7,7 +7,8 @@ const symbolsEl = document.getElementById('symbols')
 const generateEl = document.getElementById('generate')
 const clipboardEl = document.getElementById('clipboard')
 
-// store each function genrated within a key / object
+// store each function generated in object with a 
+//key name-pair random value
 const randomFunc = {
     lower: getRandomLower,
     upper: getRandomUpper,
@@ -43,20 +44,22 @@ generateEl.addEventListener('click', () => {
     const hasUpper = uppercaseEl.checked
     const hasNumber = numbersEl.checked
     const hasSymbol = symbolsEl.checked
-    console.log('input', length, hasLower, hasUpper, hasNumber, hasSymbol)
+    console.log('all input values', length, hasLower, hasUpper, hasNumber, hasSymbol)
 
     resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length)
 })
 
-// Take all 5 input generated -> 
+// function to generate pws with all 5 input -> 
 function generatePassword(lower, upper, number, symbol, length) {
     // default empty
     let generatedPassword = ''
     const typesCount = lower + upper + number + symbol
-    console.log("typesCount", typesCount)
+    console.log("typesCount how many are selected", typesCount)
+    // filter get the first value of the array to filter out false
     const typesArr = [{ lower }, { upper }, { number }, { symbol }].filter(item => Object.values(item)[0])
-    console.log("typesArr", typesArr)
+    console.log("typesArr with all true input type selected", typesArr)
     if (typesCount === 0) {
+        // if nothing return empty string
         return ''
     }
 
@@ -67,6 +70,7 @@ function generatePassword(lower, upper, number, symbol, length) {
             // filter out the false to keep the true checked values
             const funcName = Object.keys(type)[0]
             console.log("funcName ", funcName)
+            // add to empty list the first value of each type
             generatedPassword += randomFunc[funcName]()
         })
     }

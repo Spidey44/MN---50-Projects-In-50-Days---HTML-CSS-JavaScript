@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+/* entire page */
 body {
   background-color: #3b3b98;
   color: #fff;
@@ -23,15 +24,16 @@ h2 {
   margin: 10px 0 20px;
   text-align: center;
 }
-/* wraps around everything */
+/* wraps around everything all 3 containers*/
 .container {
   background-color: #23235b;
   box-shadow: 0px 2px 10px rgba(255, 255, 255, 0.2);
   padding: 20px;
+  /* like rectangle container */
   width: 350px;
   max-width: 100%;
 }
-/* Wraps the pwd result and button */
+/* Wraps the pwd result container and button clipboard */
 .result-container {
   background-color: rgba(0, 0, 0, 0.4);
   display: flex;
@@ -43,10 +45,11 @@ h2 {
   letter-spacing: 1px;
   padding: 12px 10px;
   height: 50px;
+  /* take up entire space withing container - padding */
   width: 100%;
 }
 
-/* result inserted */
+/* result inserted in result container*/
 .result-container #result {
   /* break and wrap the long word onto the next line: */
   word-wrap: break-word;
@@ -58,7 +61,7 @@ h2 {
 .result-container .btn {
   /* inside result container */
   position: absolute;
-  /* button location */
+  /* button location from top and right of container*/
   top: 5px;
   right: 5px;
     /* button size */
