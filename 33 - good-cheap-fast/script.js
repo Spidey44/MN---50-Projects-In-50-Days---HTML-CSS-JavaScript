@@ -17,19 +17,19 @@ function doTheTrick(theClickedOne, string1) {
         if (good === theClickedOne) {
             // uncheck fast for good clicked
             fast.checked = false
-            console.log("test", theClickedOne)
+            console.log("test good", theClickedOne)
         }
 
         if (cheap === theClickedOne) {
             // uncheck good for cheap clicked
             good.checked = false
-            console.log("test", theClickedOne)
+            console.log("test cheap", theClickedOne)
         }
 
         if (fast === theClickedOne) {
             // uncheck cheap for fast clicked
             cheap.checked = false
-            console.log("test", e)
+            console.log("test fast", e)
         }
     }
 }
