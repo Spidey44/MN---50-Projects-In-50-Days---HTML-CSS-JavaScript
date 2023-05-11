@@ -10,8 +10,8 @@ const clipboardEl = document.getElementById('clipboard')
 // store each function generated in object with a 
 //key name-pair random value
 const randomFunc = {
-    lower: getRandomLower,
     upper: getRandomUpper,
+    lower: getRandomLower,
     number: getRandomNumber,
     symbol: getRandomSymbol
 }
@@ -32,25 +32,26 @@ clipboardEl.addEventListener('click', () => {
     // select everything in text area
     textarea.select()
     // copy
-    document.execCommand('copy')
+    //    document.execCommand('copy')
 
-    // Clipboard API
-    // async function copyToClipboard(text) {
-    //     try {
-    //       await navigator.clipboard.writeText(text);
-    //       console.log('Text copied to clipboard');
-    //     } catch (err) {
-    //       console.error('Error in copying text: ', err);
-    //     }
-    //   }
+    //Clipboard API
+    async function copyToClipboard(text) {
+        try {
+            await navigator.clipboard.writeText(text);
+            console.log('Text copied to clipboard 1111111');
+            alert('Password copied to clipboard!')
+        } catch (err) {
+            console.error('Error in copying text: 222222', err);
+        }
+    }
 
-    // copyToClipboard('Some text to copy');
+    copyToClipboard(password);
 
     // copyToClipboard('Some text to copy');
     // Once copied remove from DOM
     textarea.remove()
     // Alert
-    alert('Password copied to clipboard!')
+    // alert('Password copied to clipboard!')
 })
 
 generateEl.addEventListener('click', () => {
