@@ -1,17 +1,18 @@
 const addBtn = document.getElementById('add')
 
 // stringify note to be added to local storage
-// 
+// convert notes into array
 const notes = JSON.parse(localStorage.getItem('notes'))
-
+console.log("test notes after parse", notes)
 // Fetch from local storage each note
 if (notes) {
     // for each text note add a new note with the note block
     notes.forEach(note => addNewNote(note))
 }
-
+// Default addNewNote is empty text
 addBtn.addEventListener('click', () => addNewNote())
 
+// function take optional and empty text by default
 function addNewNote(text = '') {
     // on click create a note with class note
     const note = document.createElement('div')
@@ -31,6 +32,7 @@ function addNewNote(text = '') {
     const editBtn = note.querySelector('.edit')
     const deleteBtn = note.querySelector('.delete')
     const main = note.querySelector('.main')
+    // add the text typed into NewNote function
     const textArea = note.querySelector('textarea')
 
     textArea.value = text
@@ -40,7 +42,7 @@ function addNewNote(text = '') {
     deleteBtn.addEventListener('click', () => {
         note.remove()
 
-        // update LocalStorage after delete
+        // without update, created value never diaper
         updateLS()
     })
 
@@ -51,9 +53,11 @@ function addNewNote(text = '') {
     })
 
     textArea.addEventListener('input', (e) => {
-        // destructuring
+        // destructuring => pull out value from e.target
         const { value } = e.target
 
+        //update innerHTML to the marked value extracted
+        // Marked library has heading, numbering, ordered, bold...
         main.innerHTML = marked(value)
 
         updateLS()
@@ -64,15 +68,16 @@ function addNewNote(text = '') {
 
 // update local storage
 function updateLS() {
-    // All text area note list
+    // ACaptre all text area of notes list
     const notesText = document.querySelectorAll('textarea')
 
     const notes = []
 
-    // loop through the list. For each note, add the value to the array
+    // loop through the list. For each note, add the value to the empty array created
     notesText.forEach(note => notes.push(note.value))
-    console.log(notes)
+    console.log("test notes before parse", notes)
 
+    // save notes into 
     localStorage.setItem('notes', JSON.stringify(notes))
 }
 
@@ -80,6 +85,7 @@ function updateLS() {
 localStorage.setItem('name', 'Brad')
 localStorage.getItem('name')
 localStorage.removeItem('name')
-//For objects
+//convert objects into string
 localStorage.setItem('name', JSON.stringify('lastname'))
+//Make string into objects
 JSON.parse('object', localStorage.getItem('lastname'))
