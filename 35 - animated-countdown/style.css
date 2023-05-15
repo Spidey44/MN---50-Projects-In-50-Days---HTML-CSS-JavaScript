@@ -17,8 +17,9 @@ h4 {
   margin: 5px;
   text-transform: uppercase;
 }
-/* show by defaut */
+/* Nums + get Ready button= show by default */
 .counter {
+  /* fixed within the browser window */
   position: fixed;
   /* 3 2 1 0 in middle edge included*/
   top: 50%;
@@ -31,6 +32,7 @@ h4 {
 /* counter hidden class with animation HIDE*/
 .counter.hide {
   /* hide scaled down to 0 while other scale up */
+  /* multiple transform at once */
   transform: translate(-50%, -50%) scale(0);
   animation: hide 0.2s ease-out;
 }
@@ -47,7 +49,7 @@ h4 {
 }
 
 /* Same position as counter */
-/* hide by default */
+/* GO + Replay button hide by default */
 .final {
   position: fixed;
   top: 50%;
@@ -68,7 +70,7 @@ h4 {
   0% {
     transform: translate(-50%, -50%) scale(0);
   }
-
+/* bump effect scale up and down */
   30% {
     transform: translate(-50%, -50%) scale(1.4);
   }
@@ -89,17 +91,21 @@ h4 {
   height: 50px;
 }
 
+/* position all the spans/ in the middle */
 .nums span {
   /* absolute inside nums */
   position: absolute;
   top: 50%;
   left: 50%;
-  /* fix positioning */
+  /* fix positioning in the middle with rotated position 120 deg*/
   transform: translate(-50%, -50%) rotate(120deg);
+  /* move bending number (120 deg) point at the bottom center */
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/transform-origin */
   transform-origin: bottom center;
 }
 
 .nums span.in {
+  /* number from hidden at 120 deg to seen at 0 deg */
   transform: translate(-50%, -50%) rotate(0deg);
   animation: goIn 0.5s ease-in-out;
 }
@@ -132,6 +138,7 @@ h4 {
     transform: translate(-50%, -50%) rotate(0deg);
   }
 
+   /* bumpy effect */
   60% {
     transform: translate(-50%, -50%) rotate(20deg);
   }
