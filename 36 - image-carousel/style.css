@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+img {
+  /* image size */
+  width: 500px;
+  height: 500px;
+  /*  maintain ratio and filling entire content box */
+  object-fit: cover;
+}
+
+/* wrapped around everything */
+.carousel {
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  /* size of image and button */
+  height: 530px;
+  /* size of image*/
+  width: 500px;
+  /* nothing break out of container */
+  overflow: hidden;
+}
+
+.image-container {
+  /* current fit and prevent next image to be seen */
+  display: flex;
+  /* image move on x axe */
+  /* switch img with translateX(-500) or  translateX(+500); */
+  transform: translateX(0);
+  transition: transform 0.5s ease-in-out;
+}
+
+/* wraps button  */
+.buttons-container {
+  display: flex;
+  /* spread out each button */
+  justify-content: space-between;
+}
+
+.btn {
+  background-color: rebeccapurple;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  /* each button take almost half the container size */
+  width: 49.5%;
+}
+
+.btn:hover {
+  /* slight color change on hover */
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: none;
+}
