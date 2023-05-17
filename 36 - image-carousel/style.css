@@ -32,8 +32,10 @@ img {
   overflow: hidden;
 }
 
+/* wraps around all images */
 .image-container {
   /* current fit and prevent next image to be seen */
+  /* default flex row to me move img horizon */
   display: flex;
   /* image move on x axe */
   /* switch img with translateX(-500) or  translateX(+500); */
@@ -44,6 +46,7 @@ img {
 /* wraps button  */
 .buttons-container {
   display: flex;
+  /* default row */
   /* spread out each button */
   justify-content: space-between;
 }
@@ -51,7 +54,7 @@ img {
 .btn {
   background-color: rebeccapurple;
   color: #fff;
-  border: none;
+  /* border: none;mutiply root html unit default 16px */
   padding: 0.5rem;
   cursor: pointer;
   /* each button take almost half the container size */
