@@ -1,6 +1,7 @@
+// container to be filled with all the cards
 const poke_container = document.getElementById('poke-container')
-const pokemon_count = 20
-// key value pair for each color
+const pokemon_count = 150
+// key value pair - type: color 
 const colors = {
     fire: '#FDDFDF',
     grass: '#DEFDE0',
@@ -18,8 +19,9 @@ const colors = {
     normal: '#F5F5F5'
 }
 
+// Use object keys as value
 const main_types = Object.keys(colors)
-console.log(main_types)
+console.log('array with different types ', main_types)
 // fetch the API data
 const fetchPokemons = async () => {
     // loop through API 150 time to generate cars with id
@@ -30,33 +32,34 @@ const fetchPokemons = async () => {
 }
 
 const getPokemon = async (id) => {
+    // Fetch card with API URL
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`
     const res = await fetch(url)
+    // convert data in JSON
     const data = await res.json()
-    console.log(data)
+    console.log("data fetched to be inserted into the DOM", data)
     createPokemonCard(data)
 }
 
-// create a card for each fetch
-// unefiiciant performance
+// create a card for each fetch - poor performance in practice
 const createPokemonCard = (pokemon) => {
     // construct div with pokemon class
     const pokemonEl = document.createElement('div')
     pokemonEl.classList.add('pokemon')
 
-    // make Pokemon name first letter uppercase with rest of the word from slice 1
+    // make Pokemon name first letter uppercase + rest of the word from slice 1
     const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1)
     // make id 3 digit with number or leading 0
     const id = pokemon.id.toString().padStart(3, '0')
-    console.log(pokemon.types)
-    // 
+    console.log('array of type pokemon', pokemon.types)
+    // create a new array -> for each time get type.name
     const poke_types = pokemon.types.map(type => type.type.name)
-    console.log(pokemon.types)
-    // no match return -1
+    console.log('array object with types', pokemon.types)
+    // loop through index type 0 for fire, 1 for grass... -> no match return -1
     const type = main_types.find(type => poke_types.indexOf(type) > -1)
     //color change based on the type as index for color
     const color = colors[type]
-    //update css based on tthe type
+    //update css based on the type
     pokemonEl.style.backgroundColor = color
 
     // create template for HTML

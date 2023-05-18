@@ -46,6 +46,7 @@ h1 {
 /* image container inside the card */
 .pokemon .img-container {
   background-color: rgba(255, 255, 255, 0.6);
+  /* boarder in img container */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -53,7 +54,7 @@ h1 {
 }
 
 .pokemon .img-container img {
-  /* 90% of image in container */
+  /* take 90% of container -> image forced inside the container */
   max-width: 90%;
   /* space from the top */
   margin-top: 20px;
