@@ -1,6 +1,6 @@
 // container to be filled with all the cards
 const poke_container = document.getElementById('poke-container')
-const pokemon_count = 150
+const pokemon_count = 155
 // key value pair - type: color 
 const colors = {
     fire: '#FDDFDF',
@@ -65,7 +65,7 @@ const createPokemonCard = (pokemon) => {
     // create template for HTML
     const pokemonInnerHTML = `
     <div class="img-container">
-        <img src="https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png" alt="">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/home/${pokemon.id}.png" alt="">
     </div>
     <div class="info">
         <span class="number">#${id}</span>
