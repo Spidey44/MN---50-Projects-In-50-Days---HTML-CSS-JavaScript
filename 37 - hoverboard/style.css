@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  /* display in a row */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* if square pass 400px, next line */
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+.square {
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  /* square size */
+  height: 16px;
+  width: 16px;
+  /* space between squares */
+  margin: 2px;
+  /* 2 sec for color to turn off */
+  transition: 2s ease;
+}
+
+.square:hover {
+  /* color turn of immediately */
+  transition-duration: 0s;
+}
