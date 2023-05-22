@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(155, 89, 182, 0.7);
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.phone {
+  /* parent element relative so other element inside to be absolute */
+  position: relative;
+  overflow: hidden;
+  /* white rounded corner */
+  border: 3px solid #eee;
+  border-radius: 15px;
+  /* rectangle size for image */
+  height: 600px;
+  width: 340px;
+}
+
+/* Image */
+.phone .content {
+  /* image disappearing */
+  opacity: 0;
+  object-fit: cover;
+  /* all image there at the same place */
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* tab size calculated */
+  height: calc(100% - 60px);
+  width: 100%;
+   /* effect for rotation class show */
+  transition: opacity 0.4s ease;
+}
+
+/* image appear with class of show from opacity 0 to 1 */
+.phone .content.show {
+  opacity: 1;
+}
+
+nav {
+  /* nav bar absolute withing the phone container */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  /* bring all icon up */
+  margin-top: -5px;
+  width: 100%;
+}
+
+nav ul {
+  background-color: #fff;
+  /* all icon item line up in a row */
+  display: flex;
+  /* no bullet point */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* 60px matches the calc value */
+  height: 60px;
+}
+
+nav li {
+  color: #777;
+  cursor: pointer;
+  /* all icon spread out the same width */
+  flex: 1;
+  /* space around each icon */
+  padding: 10px;
+  /* icon centered in middle */
+  text-align: center;
+}
+/* paragraph size */
+nav ul li p {
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+/* change  color on over and click */
+nav ul li:hover,
+nav ul li.active {
+  color: #8e44ad;
+}
