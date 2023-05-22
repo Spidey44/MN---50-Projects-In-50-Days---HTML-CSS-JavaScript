@@ -14,6 +14,7 @@ body {
   margin: 0;
 }
 
+/* wraps everything */
 .phone {
   /* parent element relative so other element inside to be absolute */
   position: relative;
@@ -26,7 +27,7 @@ body {
   width: 340px;
 }
 
-/* Image */
+/* each image with class of content - Image */
 .phone .content {
   /* image disappearing */
   opacity: 0;
@@ -50,6 +51,7 @@ body {
 nav {
   /* nav bar absolute withing the phone container */
   position: absolute;
+  /* move icons down to left bottom */
   bottom: 0;
   left: 0;
   /* bring all icon up */
@@ -63,6 +65,7 @@ nav ul {
   display: flex;
   /* no bullet point */
   list-style-type: none;
+  /* all icon and label compressed */
   padding: 0;
   margin: 0;
   /* 60px matches the calc value */
@@ -79,13 +82,13 @@ nav li {
   /* icon centered in middle */
   text-align: center;
 }
-/* paragraph size */
+/* label icon wrapped in paragraph */
 nav ul li p {
   font-size: 12px;
   margin: 2px 0;
 }
 
-/* change  color on over and click */
+/* change  color on hover or click */
 nav ul li:hover,
 nav ul li.active {
   color: #8e44ad;
