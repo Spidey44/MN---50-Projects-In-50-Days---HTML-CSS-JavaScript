@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.magic {
+  background-color: #f9ca24;
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  border: 0;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px 20px;
+  cursor: pointer;
+  /* fixed within the browser window + up top 20px*/
+  position: fixed;
+  top: 20px;
+  letter-spacing: 1px;
+  box-shadow: 0 3px rgba(249, 202, 36, 0.5);
+  /* button always on top */
+  z-index: 100;
+}
+
+.magic:focus {
+  outline: none;
+}
+
+/* effect on active state: box shadow covered and move up */
+.magic:active {
+  box-shadow: none;
+  transform: translateY(2px);
+}
+
+/* container of 16 boxes */
+.boxes {
+  /* Flex default row */
+  display: flex;
+  /* 5th box wrapped in a new row with margin*/
+  flex-wrap: wrap;
+  /* remaining space on x from side to around boxes */
+  justify-content: space-around;
+  /* 500 => 125x4 small boxes on X and Y */
+  height: 500px;
+  width: 500px;
+  position: relative;
+  transition: 0.4s ease;
+}
+
+/* big class extand and separated the box when extra margin */
+.boxes.big {
+  /* container from 500X500 to 600x600 */
+  width: 600px;
+  height: 600px;
+}
+
+/* add box class create a rotate effect */
+.boxes.big .box {
+  transform: rotateZ(360deg);
+}
+
+/* individual boxes */
+.box {
+  background-image: url('https://media.giphy.com/media/EZqwsBSPlvSda/giphy.gif');
+  background-repeat: no-repeat;
+  /* stretch out from visible in entire box visible to top right part of image  */
+  background-size: 500px 500px;
+  /* relative to boxes container */
+  position: relative;
+  /* size boxes */
+  height: 125px;
+  width: 125px;
+  transition: 0.4s ease;
+}
+
+.box::after {
+  /* invisible element to add style */
+  content: 'testafter';
+  background-color: #f6e58d;
+  /* relative on a box */
+  position: absolute;
+  /* 8 from top to push down */
+  top: 8px;
+  right: -15px;
+  /* take full container space */
+  height: 100%;
+  width: 15px;
+  /* diagonal effect */
+  transform: skewY(45deg);
+}
+
+.box::before {
+  /* invisible element to add style */
+  content: 'testbefore';
+  background-color: #f9ca24;
+  /* relative on a box */
+  position: absolute;
+  /* reverse from peuso after*/
+  bottom: -15px;
+  left: 8px;
+  height: 15px;
+  width: 100%;
+  transform: skewX(45deg);
+}
