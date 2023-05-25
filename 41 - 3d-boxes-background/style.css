@@ -16,6 +16,7 @@ body {
   overflow: hidden;
 }
 
+/* button with class magic */
 .magic {
   background-color: #f9ca24;
   color: #fff;
@@ -38,7 +39,8 @@ body {
   outline: none;
 }
 
-/* effect on active state: box shadow covered and move up */
+ /* effect on active state = click and hold*/
+ /* box shadow covered and move up */ 
 .magic:active {
   box-shadow: none;
   transform: translateY(2px);
@@ -48,7 +50,8 @@ body {
 .boxes {
   /* Flex default row */
   display: flex;
-  /* 5th box wrapped in a new row with margin*/
+  /* 5th... last box wrapped within the container 
+  vs continue in 1 row outside*/
   flex-wrap: wrap;
   /* remaining space on x from side to around boxes */
   justify-content: space-around;
@@ -59,14 +62,14 @@ body {
   transition: 0.4s ease;
 }
 
-/* big class extand and separated the box when extra margin */
+/* big class extend and separated the box when extra margin */
 .boxes.big {
   /* container from 500X500 to 600x600 */
   width: 600px;
   height: 600px;
 }
 
-/* add box class create a rotate effect */
+/* adding a box class create a rotate effect */
 .boxes.big .box {
   transform: rotateZ(360deg);
 }
@@ -85,6 +88,7 @@ body {
   transition: 0.4s ease;
 }
 
+/* After and Before create the 3D cube effect */
 .box::after {
   /* invisible element to add style */
   content: 'testafter';
