@@ -10,8 +10,9 @@ codes.forEach((code, idx) => {
     // run a function with event object check if valid number
 
     code.addEventListener('keydown', (e) => {
+        // if valid snumber move focus to the next slot at index+1
         if (e.key >= 0 && e.key <= 9) {
-            // bug fix clear the index on clic
+            // bug fix clear the index on click
             codes[idx].value = ''
             // set the node list to index to move forward
             // start with ind0 then wait 10ms before move to next one

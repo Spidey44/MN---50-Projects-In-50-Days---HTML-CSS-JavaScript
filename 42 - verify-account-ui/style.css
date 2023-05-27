@@ -27,6 +27,7 @@ body {
 
 /* wrap all the inputs */
 .code-container {
+  /* make number container in a row */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,6 +69,7 @@ body {
   display: inline-block;
   padding: 10px;
   line-height: 20px;
+  /* text squized */
   max-width: 400px;
   color: #777;
   border-radius: 5px;
@@ -76,11 +78,14 @@ body {
 /* wraps numbers on smaller screen */
 @media (max-width: 600px) {
   .code-container {
+    /* goes on to next line */
     flex-wrap: wrap;
   }
   /* update the size of the code */
   .code {
+    /* front from 75 to 60 */
     font-size: 60px;
+    /* front from 100 to 60 */
     height: 80px;
     max-width: 70px;
   }
