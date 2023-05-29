@@ -23,21 +23,25 @@ body {
 }
 
 .title {
+  /* remove margin the space around title */
   margin: 0;
 }
 
+  /* search name and location */
 .subtitle {
   display: inline-block;
   margin: 5px 0 20px;
   opacity: 0.8;
 }
 
+/* contain title, subtile ans search field */
 .header {
   background-color: #3e57db;
   color: #fff;
   padding: 30px 20px;
 }
 
+/* inside search field */
 .header input {
   background-color: rgba(0, 0, 0, 0.3);
   border: 0;
@@ -48,47 +52,60 @@ body {
   width: 100%;
 }
 
+/* boarder when clicked */
 .header input:focus {
   outline: none;
 }
 
 .user-list {
   background-color: #fff;
+  /* remove bullet point */
   list-style-type: none;
   margin: 0;
+  /* all aligned to the left */
   padding: 0;
+  /* shorten the search result display */
   max-height: 400px;
+  /* scroll bar appear */
   overflow-y: auto;
 }
 
 .user-list li {
+  /* display picture + text in a row */
   display: flex;
   padding: 20px;
 }
 
 .user-list img {
+  /* rounded image */
   border-radius: 50%;
   object-fit: cover;
+  /* Small square size image */
   height: 50px;
   width: 50px;
 }
 
 .user-list .user-info {
+  /* push over name and city over to right from img */
   margin-left: 10px;
 }
 
 .user-list .user-info h4 {
+  /* Move to the top beside img */
   margin: 0 0 10px;
 }
 
 .user-list .user-info p {
+  /* paragraph smaller */
   font-size: 12px;
 }
 
+/* Any list item except the last */
 .user-list li:not(:last-of-type) {
+  /* border */
   border-bottom: 1px solid #eee;
 }
-
+/* user with class hide wont appear */
 .user-list li.hide {
   display: none;
 }
