@@ -1,4 +1,6 @@
+// search
 const result = document.getElementById('result')
+// input
 const filter = document.getElementById('filter')
 // put fetched data
 const listItems = []
@@ -13,27 +15,28 @@ getData()
 filter.addEventListener('input', (e) => filterData(e.target.value))
 
 async function getData() {
-    // await to return the promise with data
+    // await to return the promise with data 50 users
     const res = await fetch('https://randomuser.me/api?results=50')
 
-    // destructure
+    // destructure. Can be JSON, XML, CSV, or YAML
     const { results } = await res.json()
     // API data may come in different form  ( 1 array,object..) or path
     console.log('API Result', results)
 
-    // Clear result
+    // Clear result ul, not the results API data
     result.innerHTML = ''
 
     // Loop through the results
     results.forEach(user => {
         console.log('user', user)
-        // create a lit item per user
+        // construct a li item per user
         const li = document.createElement('li')
 
         // push each li created in the empty listItem array
         listItems.push(li)
 
-        // add the inner htlm to the li initially hard coded
+        // add the inner HTLM to the li initially hard coded
+        // https://randomuser.me/documentation
         li.innerHTML = `
             <img src="${user.picture.large}" alt="${user.name.first}">
             <div class="user-info">
@@ -48,8 +51,10 @@ async function getData() {
 
 function filterData(searchTerm) {
     console.log('term searched', searchTerm)
+    // loop through the array of users
     listItems.forEach(item => {
-        // convert to check if matches item and remove add class otherwise add
+        //convert to lowercase and check if matches (does INCLUDES search term?)
+        //then filter by remove/add class hide as i type
         if (item.innerText.toLowerCase().includes(searchTerm.toLowerCase())) {
             item.classList.remove('hide')
         } else {

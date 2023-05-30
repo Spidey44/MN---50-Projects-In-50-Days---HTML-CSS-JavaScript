@@ -15,33 +15,34 @@ body {
   margin: 0;
 }
 
+/* header + search result with large boarder */
 .container {
   border-radius: 5px;
   box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
   overflow: hidden;
   width: 300px;
 }
-
+/* live user filter */
 .title {
   /* remove margin the space around title */
   margin: 0;
 }
 
-  /* search name and location */
+  /* search by name or/and location */
 .subtitle {
   display: inline-block;
   margin: 5px 0 20px;
   opacity: 0.8;
 }
 
-/* contain title, subtile ans search field */
+/* contain title, subtile ands search field */
 .header {
   background-color: #3e57db;
   color: #fff;
   padding: 30px 20px;
 }
 
-/* inside search field */
+/* inside search field where user enter search*/
 .header input {
   background-color: rgba(0, 0, 0, 0.3);
   border: 0;
@@ -57,6 +58,7 @@ body {
   outline: none;
 }
 
+/* all search result + loading in list */
 .user-list {
   background-color: #fff;
   /* remove bullet point */
