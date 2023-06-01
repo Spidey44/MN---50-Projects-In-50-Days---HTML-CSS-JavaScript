@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* light gray */
+  background-color: #fef9f2;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* contains everything inside */
+.panel-container {
+  /* white */
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  font-size: 90%;
+  display: flex;
+  /* default flex direction row */
+  /* all on top of each other */
+  flex-direction: column;
+  justify-content: center;
+  /* makes elements shrink in centered */
+  align-items: center;
+  text-align: center;
+  padding: 30px;
+  max-width: 400px;
+}
+
+.panel-container strong {
+  line-height: 20px;
+}
+
+/* wrap 3 faces */
+.ratings-container {
+  /* default flex row */
+  display: flex;
+  margin: 20px 0;
+}
+
+.rating {
+  flex: 1;
+  cursor: pointer;
+  /* spread the image with emotion out */
+  padding: 20px;
+  margin: 10px 5px;
+}
+
+/* default border on active, other border on hover */
+.rating:hover,
+.rating.active {
+  border-radius: 4px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* makes image smaller */
+.rating img {
+  width: 40px;
+}
+
+/* emotion under image */
+.rating small {
+  color: #555;
+  display: inline-block;
+  margin: 10px 0 0;
+}
+
+/* target the small tags */
+.rating:hover small,
+.rating.active small {
+  color: #111;
+}
+
+.btn {
+  background-color: #302d2b;
+  /* text white */
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  padding: 12px 30px;
+  cursor: pointer;
+}
+
+/* button with scaling up down effect */
+.btn:focus {
+  outline: 0;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* icon to be inserted with text on submit */
+.fa-heart {
+  color: red;
+  font-size: 30px;
+  margin-bottom: 10px;
+}
