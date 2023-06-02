@@ -20,32 +20,35 @@ body {
 .panel-container {
   /* white */
   background-color: #fff;
+  /* boarder #1*/
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
   border-radius: 4px;
   font-size: 90%;
   display: flex;
   /* default flex direction row */
-  /* all on top of each other */
+  /* all on top of each other title, img, button*/
   flex-direction: column;
   justify-content: center;
   /* makes elements shrink in centered */
   align-items: center;
   text-align: center;
+  /* away  from edges */
   padding: 30px;
   max-width: 400px;
 }
 
 .panel-container strong {
+  /* border #2 */
   line-height: 20px;
 }
 
 /* wrap 3 faces */
 .ratings-container {
-  /* default flex row */
+  /* default flex with 3 image/ emotion in a row */
   display: flex;
   margin: 20px 0;
 }
-
+/* each face/emotion individually */
 .rating {
   flex: 1;
   cursor: pointer;
@@ -89,11 +92,12 @@ body {
   cursor: pointer;
 }
 
-/* button with scaling up down effect */
+
 .btn:focus {
   outline: 0;
 }
 
+/* button with scaling up down effect */
 .btn:active {
   transform: scale(0.98);
 }

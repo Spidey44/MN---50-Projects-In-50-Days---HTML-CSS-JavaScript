@@ -6,18 +6,20 @@ const ratings = document.querySelectorAll('.rating')
 const ratingsContainer = document.querySelector('.ratings-container')
 const sendBtn = document.querySelector('#send')
 const panel = document.querySelector('#panel')
-// save the rating emotion default satisfied
+// save the rating emotion default satisfied on page load
 let selectedRating = 'Satisfied'
 
-// event listeer doable wit ratings. but create error due to parent
+// event listener doable wit ratings. but create error due to parent
 ratingsContainer.addEventListener('click', (e) => {
-    console.log("test1", e.target)
+    console.log("test1 show target clicked", e.target)
     console.log("test2", e.target.classList)
     console.log("test3", e.target.parentNode.classList)
+    // event bubbling propagate in container but capture target clicked
     if (e.target.parentNode.classList.contains('rating')) {
+        // go through each node and remove class
         removeActive()
         e.target.parentNode.classList.add('active')
-        // update the emotion name. Sibling different parent
+        // update the emotion name. take next Sibling element which is name in small tag
         selectedRating = e.target.nextElementSibling.innerHTML
         console.log("test4", e.target.nextElementSibling)
         console.log("test5", selectedRating)
@@ -25,7 +27,7 @@ ratingsContainer.addEventListener('click', (e) => {
 })
 
 sendBtn.addEventListener('click', (e) => {
-    // change the panel element
+    // replacing the panel element on click
     panel.innerHTML = `
         <i class="fas fa-heart"></i>
         <strong>Thank You!</strong>
@@ -36,6 +38,7 @@ sendBtn.addEventListener('click', (e) => {
 })
 
 function removeActive() {
+    // go through each node and remove class
     for (let i = 0; i < ratings.length; i++) {
         // node list
         ratings[i].classList.remove('active')
