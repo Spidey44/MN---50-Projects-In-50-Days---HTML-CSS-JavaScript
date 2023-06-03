@@ -36,6 +36,7 @@ input[type='range'] {
   -webkit-appearance: none;
 }
 
+/* border when focus */
 input[type='range']:focus {
   outline: none;
 }
@@ -76,6 +77,11 @@ input[type='range']::-webkit-slider-thumb {
   cursor: pointer;
 }
 
+
+
+
+
+
 /* Firefox */
 /* track */
 input[type='range']::-moz-range-track {
@@ -97,6 +103,11 @@ input[type='range']::-moz-range-thumb {
   margin-top: -7px;
   cursor: pointer;
 }
+
+
+
+
+
 
 /* IE */
 input[type='range']::-ms-track {

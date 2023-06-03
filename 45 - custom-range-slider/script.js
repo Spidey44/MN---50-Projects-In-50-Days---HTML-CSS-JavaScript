@@ -8,6 +8,7 @@ range.addEventListener('input', (e) => {
     // Label is next sibling f target
     const label = e.target.nextElementSibling
 
+    //getComputedStyle() get value from the CSS with getPropertyValue('width')
     const range_width = getComputedStyle(e.target).getPropertyValue('width')
     console.log("static range_width from CSS", range_width)
     const label_width = getComputedStyle(label).getPropertyValue('width')
@@ -30,7 +31,7 @@ range.addEventListener('input', (e) => {
     // apply the left value to CSS label
     label.style.left = `${left}px`
 
-    // updated label as i move
+    // updated label as i move the cursor
     label.innerHTML = value
 })
 
