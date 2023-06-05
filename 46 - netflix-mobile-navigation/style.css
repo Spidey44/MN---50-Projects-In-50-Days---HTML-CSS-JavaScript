@@ -14,17 +14,21 @@ body {
 }
 
 .text {
+  /* Makes text uppercase */
   text-transform: uppercase;
 }
-
+/* make huge logo fit*/
 .logo {
   width: 150px;
 }
 
+/* Style the hamburger*/
 .nav-btn {
   border: none;
+  /* remove gray from icon */
   background-color: transparent;
   cursor: pointer;
+  /* make the icon bigger */
   font-size: 20px;
 }
 
@@ -36,6 +40,7 @@ body {
 }
 
 /* All menu includes menu */
+/* menu moved at the top left visible /invisible as translateX */
 .nav {
   position: fixed;
   top: 0;
@@ -55,6 +60,7 @@ body {
 .nav-black {
   background-color: rgb(34, 31, 31);
   width: 60%;
+  /* no pass 480 no matter what */
   max-width: 480px;
   min-width: 320px;
   transition-delay: 0.4s;
@@ -67,10 +73,12 @@ body {
 .nav-red {
   background-color: rgb(229, 9, 20);
   width: 95%;
+    /* wait time after click */
   transition-delay: 0.2s;
 }
 
 .nav-red.visible {
+    /* wait time after click */
   transition-delay: 0.2s;
 }
 
@@ -80,27 +88,33 @@ body {
   padding: 40px;
   /* close button absolute */
   position: relative;
+    /* wait time after click */
   transition-delay: 0s;
 }
 
 .nav-white.visible {
+  /* wait time after click */
   transition-delay: 0.4s;
 }
 
 .close-btn {
   opacity: 0.3;
+  /* within nav white container */
   position: absolute;
   top: 40px;
   right: 30px;
 }
 
+/* initial UL */
 .list {
-  /* remove padding and move to the left padding 0 */
+  /* remove bullet point */
   list-style-type: none;
+  /* remove padding and move to the left padding 0 */
   padding: 0;
 }
 
 .list li {
+  /* list items spread out top bottom */
   margin: 20px 0;
 }
 
@@ -113,6 +127,7 @@ body {
   text-transform: uppercase;
 }
 
+/* UL nested within the list */
 .list ul {
   list-style-type: none;
   padding-left: 20px;

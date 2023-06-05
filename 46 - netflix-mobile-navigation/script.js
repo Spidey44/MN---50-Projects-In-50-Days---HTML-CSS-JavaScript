@@ -4,7 +4,7 @@ const close_btn = document.querySelector('.close-btn')
 const nav = document.querySelectorAll('.nav')
 
 open_btn.addEventListener('click', () => {
-    // loop through each node and add class visible
+    // loop through each node element and add class visible
     nav.forEach(nav_el => nav_el.classList.add('visible'))
 })
 
