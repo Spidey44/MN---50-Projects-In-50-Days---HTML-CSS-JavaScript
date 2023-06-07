@@ -32,25 +32,29 @@ body {
   padding: 4rem;
 }
 
+/* the Question */
 h2 {
   padding: 1rem;
   text-align: center;
   margin: 0;
 }
 
+/* The answers */
 ul {
   /* no bullet point */
   list-style-type: none;
   padding: 0;
+  background-color: orange;
 }
-
+/* answer background */
 ul li {
-  /* font size ansers */
+  /* font size answers */
   font-size: 1.2rem;
   /* top bottom */
   margin: 1rem 0;
+  background-color: yellow;
 }
-
+/* answer text */
 ul li label {
   /* pointer if hover over */
   cursor: pointer;
@@ -60,6 +64,7 @@ button {
   background-color: #8e44ad;
   color: #fff;
   border: none;
+  /* block element (like <p>). It starts on a new line, and takes up the whole width */
   display: block;
   /* all the way across */
   width: 100%;

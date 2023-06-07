@@ -1,4 +1,4 @@
-// array of data
+// array of data qith Question, answer and correct
 const quizData = [
     {
         question: "Which language runs in a web browser?",
@@ -58,7 +58,9 @@ function loadQuiz() {
     const currentQuizData = quizData[currentQuiz]
 
     // get question / answers element inner text set to currentQuiz data
+    // one of the object in array. replace with question value
     questionEl.innerText = currentQuizData.question
+    // replace with answer A, B, C D values
     a_text.innerText = currentQuizData.a
     b_text.innerText = currentQuizData.b
     c_text.innerText = currentQuizData.c
@@ -70,8 +72,10 @@ function deselectAnswers() {
 }
 
 function getSelected() {
+    // node list of answers element
     let answer
 
+    // loop through them set to unchecked (false)
     answerEls.forEach(answerEl => {
         if (answerEl.checked) {
             answer = answerEl.id
@@ -81,13 +85,15 @@ function getSelected() {
     return answer
 }
 
+// click event
 submitBtn.addEventListener('click', () => {
     const answer = getSelected()
     console.log("selected", answer)
 
-    // match with correct answer
+    // which one answer is checked?
+    // then compare with correct answer
     if (answer) {
-        // check if the value is correct 
+        // check if the match value = correct => increment score
         if (answer === quizData[currentQuiz].correct) {
             score++
         }
@@ -99,7 +105,7 @@ submitBtn.addEventListener('click', () => {
             // move to the next
             loadQuiz()
             // if last passed, display answer
-            // click reload reload the quiz
+            // click button to reload the quiz
         } else {
             quiz.innerHTML = `
                 <h2>You answered ${score}/${quizData.length} questions correctly</h2>
