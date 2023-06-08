@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* ark background with light gray */
+  background-color: #f4f4f4;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 10px;
+}
+
+/* wrap all the testimonial info */
+.testimonial-container {
+  background-color: #476ce4;
+  /* font color */
+  color: #fff;
+  border-radius: 15px;
+/* space in between */
+  margin: 20px auto;
+  /* Space from edge */
+  padding: 50px 80px;
+  /* Size on the box */
+  max-width: 768px;
+  /* quote absolute */
+  position: relative;
+}
+
+/* on both quote on the same spot */
+.fa-quote {
+  color: rgba(255, 255, 255, 0.3);
+  /* size bigger */
+  font-size: 28px;
+  position: absolute;
+  top: 70px;
+}
+
+/* Position on quote right */
+.fa-quote-right {
+  left: 40px;
+}
+
+/* Position on quote left */
+.fa-quote-left {
+  right: 40px;
+}
+
+/* paragraph */
+.testimonial {
+  /* spread line apart */
+  line-height: 28px;
+  /* type of paragraph */
+  text-align: justify;
+}
+
+/* Image and name in a row */
+.user {
+  /*  */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user .user-image {
+  /* image circular */
+  border-radius: 50%;
+  /* Size square */
+  height: 75px;
+  width: 75px;
+  object-fit: cover;
+}
+/* omn text to add space from picture */
+.user .user-details {
+  margin-left: 10px;
+}
+
+.user .username {
+  margin: 0;
+}
+
+/* bring name and role closer vertically */
+.user .role {
+  font-weight: normal;
+  margin: 10px 0;
+}
+
+/*  includes animation */
+.progress-bar {
+  background-color: #fff;
+  height: 4px;
+  width: 100%;
+  animation: grow 10s linear infinite;
+  /* animation start at the left */
+  transform-origin: left;
+}
+
+/* animation */
+@keyframes grow {
+  0% {
+    transform: scaleX(0);
+  }
+}
+
+/* In small screen */
+@media (max-width: 768px) {
+  /* less padding */
+  .testimonial-container {
+    padding: 20px 30px;
+  }
+
+  /* remove quote */
+  .fa-quote {
+    display: none;
+  }
+}
