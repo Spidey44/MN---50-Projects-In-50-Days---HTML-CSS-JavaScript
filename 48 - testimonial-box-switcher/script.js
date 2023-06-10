@@ -1,6 +1,6 @@
 // box
 const testimonialsContainer = document.querySelector('.testimonials-container')
-// text
+// text with all elements image, username and role
 const testimonial = document.querySelector('.testimonial')
 const userImage = document.querySelector('.user-image')
 const username = document.querySelector('.username')
