@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* overflow = scrollbar */
+  /* Makes the title visible */
+  min-height: 100vh;
+  margin: 0;
+}
+
+.title {
+  margin: 10px 0 0;
+  text-align: center;
+}
+
+/* all images in container -> move container to flexbox img i row*/
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* wrap to next line */
+  flex-wrap: wrap;
+  /* don't go above 1000px = 3 images */
+  max-width: 1000px;
+}
+
+.container img {
+  /* see whole image */
+  object-fit: cover;
+  /* in between images */
+  margin: 10px;
+  /* set as square */
+  height: 300px;
+  width: 300px;
+  /* don't go outside container */
+  max-width: 100%;
+}
