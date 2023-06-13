@@ -2,9 +2,10 @@ const form = document.getElementById('form')
 const input = document.getElementById('input')
 const todosUL = document.getElementById('todos')
 
-// item load on if todo in  local storarage
+// item load on if todo in  local storage
 const todos = JSON.parse(localStorage.getItem('todos'))
 
+// if todo in local storage go through them and add them for each one
 if (todos) {
     todos.forEach(todo => addTodo(todo))
 }
@@ -17,13 +18,14 @@ form.addEventListener('submit', (e) => {
 
 // take in todo from input
 function addTodo(todo) {
+    // set text to input
     let todoText = input.value
 
     // capture todo is passed in
     if (todo) {
         todoText = todo.text
     }
-    console.log("text", todo.text)
+    // console.log("text", todo.text)
 
     // construct a list item if todo exist
     if (todoText) {
@@ -32,6 +34,7 @@ function addTodo(todo) {
             todoEl.classList.add('completed')
         }
 
+        // set inner text to the input
         todoEl.innerText = todoText
 
         // completed class added and removed on click (toggle)
@@ -47,7 +50,7 @@ function addTodo(todo) {
             todoEl.remove()
             updateLS()
         })
-        // add to the dom
+        // add list item to the dom
         todosUL.appendChild(todoEl)
 
         input.value = ''
@@ -61,7 +64,7 @@ function updateLS() {
     // node list
     todosEl = document.querySelectorAll('li')
 
-    // default empty. loop throuth and push
+    // default empty. loop through and push
     const todos = []
 
     todosEl.forEach(todoEl => {
@@ -77,3 +80,10 @@ function updateLS() {
     // update local storage with list of items
     localStorage.setItem('todos', JSON.stringify(todos))
 }
+
+// save in Local storage = default save as a string
+localStorage.setItem('First', 'last')
+// save object Local storage => stringify
+localStorage.setItem('todos', JSON.stringify(obj))
+// Take an object  out 
+JSON.parse(localStorage.getItem(obj))
