@@ -102,8 +102,10 @@ h1 {
   object-fit: contain;
 }
 
+/* Final screen 3/3 */
 .game-container {
   position: relative;
+  /* child element absolute within it */
 }
 
 .time,
@@ -111,35 +113,42 @@ h1 {
   position: absolute;
   top: 20px;
 }
-
+/* one one side */
 .time {
   left: 20px;
 }
 
+/* on the other side */
 .score {
   right: 20px;
 }
 
+/* Annoyed message */
 .message {
   line-height: 1.7;
   background-color: rgba(0, 0, 0, 0.5);
+  /* background take full width */
   width: 100%;
   padding: 20px;
+  /* in front of all */
   z-index: 100;
   text-align: center;
   opacity: 0;
   position: absolute;
   top: 0;
   left: 50%;
+  /* INitially invisible. Way above */
   transform: translate(-50%, -150%);
   transition: transform 0.4s ease-in;
 }
 
 .message.visible {
+  /* Then message visible */
   transform: translate(-50%, 150%);
   opacity: 1;
 }
 
+/* Style the insect inserted with JS */
 .insect {
   cursor: pointer;
   display: flex;
