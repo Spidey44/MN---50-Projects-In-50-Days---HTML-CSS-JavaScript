@@ -14,7 +14,8 @@ body {
   text-align: center;
 }
 
-/* all link with color white */
+/* screen 2 - selection ul 
+all link with color white */
 a {
   color: #fff;
 }
@@ -26,22 +27,26 @@ h1 {
 .btn {
   border: 0;
   background-color: #fff;
+  /* label */
   color: #516dff;
+  /* button space */
   padding: 15px 20px;
   font-family: inherit;
   cursor: pointer;
 }
 
+/* effect makes il bit transparent */
 .btn:hover {
   opacity: 0.9;
 }
-
+/* outline around button */
 .btn:focus {
   outline: 0;
 }
 
+/* Each screen take whole view port */
 .screen {
-  /* image in a row */
+  /* image in a row on top of each other*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -80,11 +85,13 @@ h1 {
   color: #fff;
   cursor: pointer;
   font-family: inherit;
+  /* wraps on small screen */
   width: 150px;
   height: 150px;
 }
 
-/* white effect on hover. MAkes button white */
+/* white effect on hover. 
+Switch the blue and white color */
 .choose-insect-btn:hover {
   background-color: #fff;
   color: #516dff;
@@ -96,7 +103,8 @@ h1 {
 }
 
 .choose-insect-btn img {
-  /* shrink image down */
+  /* shrink image down because too big */
+  /* Make the disappear behind first screen */
   width: 100px;
   height: 100px;
   object-fit: contain;
@@ -110,6 +118,7 @@ h1 {
 
 .time,
 .score {
+  /* both on the same place */
   position: absolute;
   top: 20px;
 }
@@ -123,7 +132,7 @@ h1 {
   right: 20px;
 }
 
-/* Annoyed message */
+/* Annoyed message displayed with class visible*/
 .message {
   line-height: 1.7;
   background-color: rgba(0, 0, 0, 0.5);
@@ -142,6 +151,7 @@ h1 {
   transition: transform 0.4s ease-in;
 }
 
+/* visible class change the opacity */
 .message.visible {
   /* Then message visible */
   transform: translate(-50%, 150%);
@@ -156,16 +166,21 @@ h1 {
   justify-content: center;
   width: 100px;
   height: 100px;
+  /* position at the top */
   position: absolute;
+  /* translate and X and Y . default y -150$ invisible 150 visible*/
   transform: translate(-50%, -50%) scale(1);
   transition: transform 0.3s ease-in-out;
+  /* here top and left value added as random spot */
 }
 
+/* scale down to 0 makes insect go away */
 .insect.caught {
   transform: translate(-50%, -50%) scale(0);
 }
 
 .insect img {
+  /* insect image within the container img */
   width: 100px;
   height: 100px;
 }
