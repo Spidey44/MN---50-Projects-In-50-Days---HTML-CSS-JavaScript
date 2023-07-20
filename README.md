@@ -1,7 +1,7 @@
 50 Projects in 50 Days - HTML/CSS and JavaScript
-This is the main repository for all of the projects completed from the the course.
-- Course Link
-- Course Info Website
+
+This is the main repository for all of the projects completed from the course.
+
 
 |  #  | Project                                                                                                                     | Live Demo                                                                         |
 | :-: | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
